@@ -1,0 +1,31 @@
+<div class="current">
+  <div class="current__search">
+    <div>
+      <label for="city">Город: </label>
+      <input id="city" type="text" [formControl]="cityControl">
+    </div>
+  </div>
+  @if (isLoading()){
+    <div class="current__loading">
+      <div class="current__loading--rotate"></div>
+    </div>
+  }
+  <div class="spacer"></div>
+</div>
+
+<div class="result">
+  <div class="result__history">
+    @if ((data$ | async)?.history; as historyData) {
+      <app-weather-history [historyData]="historyData"></app-weather-history>
+    }
+  </div>
+  <div class="divider"></div>
+  <div class="result__details">
+    @if ((data$ | async)?.current; as current) {
+      <h3 class="result__title">Погода сегодня</h3>
+      <app-weather-current [current]="current"></app-weather-current>
+    }
+  </div>
+</div>
+
+

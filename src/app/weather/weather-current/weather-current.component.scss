@@ -1,0 +1,10 @@
+.grid-wrapper {
+  padding: 22px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 5px;
+  column-gap: 5px;
+  row-gap: 1em;
+  background-color: lightgray;
+  height: 30%;
+}
